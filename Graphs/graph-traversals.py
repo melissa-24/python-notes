@@ -45,7 +45,7 @@ class Graph:
     def get_neighbors(self, vertex_id):
         return self.vertices[vertex_id]
 
-# Pseudocode
+# Pseudocode => DFT Iterative
 
 # procedure DFT_iterative(G, V) is
 #     let S be a stack
@@ -69,13 +69,13 @@ class Graph:
                 for neighbor in self.vertices[currNode]:
                     stack.append(neighbor)
 
-# Pseudocode
+# Pseudocode => DFT Recursive
 
 # procedure DFS(G, v) is
 #     label v as discovered 
 #     for all directed edges from v to w that are in G.adjacentEdges(v) do
 #         if vertex w is not labeled as discovered then
-#         recursively
+#         recursively call DFS(G, w)
 
     def dfs(self, starting_vertex, goal_vertex):
         visited = set()
@@ -93,6 +93,23 @@ class Graph:
                     newPath = list(currPath) # make a copy of hte current path
                     newPath.append(neighbor)
                     stack.append(newPath)
+
+
+# Pseudocode => BFT Search
+
+# procedure BFT(G, root) is
+#     let Q be a queue
+#     label root as discovered
+#     Q.enqueue(root)
+#     while Q is not empty do
+#         v:=q.enqueue()
+#         if v is the goal then
+#             return v
+#         for all edges from v to w in G.adjacentEdges(v) do
+#             if w is not labeled as discovered then
+#                 label w as discovered
+#                 w.parent := v
+#                 Q.enqueue(w)
 
 
 # Uses queue instead of stack like dft this is also not recursive

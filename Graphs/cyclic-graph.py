@@ -1,3 +1,14 @@
+# Vertex = nodes
+# Edge = connects a pair of nodes
+#     Unidirectional = path from a to b but not b to a
+#     Bidirectional = a is friends with b and b is friends with a
+# Weight = used to represent a values (usually a cost or time)
+
+# Cyclic vs Acyclic
+# cyclic => there is a least 1 path from a node back to itself
+# acyclic => there are no paths that can lead back to a node.
+
+
 class Graph:
 
     def __init__(self):
