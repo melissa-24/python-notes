@@ -31,7 +31,8 @@ class Graph:
             print('trying to add edge to non-existing node')
             return
         self.vertices[from_vertex_id].add(to_vertex_id)
-
+        
+    # Returns all outgoing edges from vertex_id
     def get_neighbors(self, vertex_id):
         return self.vertices[vertex_id]
 
